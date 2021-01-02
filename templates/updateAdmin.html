@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递员管理系统</title>
+</head>
+<body>
+<form action="/updateAdmin" method="post">
+    {% csrf_token %}
+    <p>管理员id:</p>
+    <input type="text" name="userid" value="{{userid}}">
+    <input type="submit" name="query" value="查询">
+    <p>密码：</p>
+    <input type="text" name="psw" value="{{psw}}">
+    <input type="submit" name="update" value="修改密码">
+    <input type="submit" name="delete" value="删除该账号">
+</form>
+<p>{{msg}}</p>
+<a href="{% url 'login' %}">返回登陆界面</a>
+<p>{{return|safe}}</p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<form action="/queryNetwork" method="post">
+    {% csrf_token %}
+    <p>查询网点：</p>
+    <input name="network" type="text" value="{{network}}">
+    <input type="submit" value="查询">
+    <p>  该网点快件总数：{{number}}</p>
+    <p>该网点问题件总数：{{problem}}</p>
+</form>
+<p>{{msg}}</p>
+<a href="{% url 'login' %}">返回登陆界面</a>
+<p>{{return|safe}}</p>
+</body>
+</html>

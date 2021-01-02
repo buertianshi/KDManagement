@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<form action="/deleteNetwork" method="post">
+    {% csrf_token %}
+    <p>删除网点：</p>
+    <input name="network" type="text" value="{{network}}">
+    <input type="submit" value="删除">
+</form>
+<p>{{msg}}</p>
+<a href="{% url 'login' %}">返回登陆界面</a>
+<p>{{return|safe}}</p>
+</body>
+</html>

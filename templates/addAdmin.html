@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<form action="addAdmin" method="post">
+    {% csrf_token %}
+    <p>管理员id：</p>
+    <input type="text" name="userid">
+    <p>密码</p>
+    <input type="text" name="psw">
+    <br>
+    <input type="submit" value="新增">
+</form>
+<p>{{msg}}</p>
+<a href="{% url 'login' %}">返回登陆界面</a>
+<p>{{return|safe}}</p>
+</body>
+</html>

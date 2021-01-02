@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<form action="/updateKD" method="post" onsubmit="return">
+    {% csrf_token %}
+    <p>单号：</p>
+    <input type="text" name="id" value="{{id}}">
+    <input type="submit" value="查询" name="query">
+    <h1>寄件人:</h1>
+    <p>{{username}}</p>
+    <h1>收件人:</h1>
+    <p>{{receiver}}</p>
+    <h1>发出地:</h1>
+    <p>{{sourcePlace}}</p>
+    <h1>目的地:</h1>
+    <p>{{destination}}</p>
+    <h1>快件详情:</h1>
+    <p>{{content}}</p>
+    <h1>当前位置：</h1>
+    <input type="text" name="networkName" value="{{networkName}}">
+    <h1>当前状态：</h1>
+    <input type="text" name="condition" value="{{condition}}">
+    <h1>是否为问题件</h1>
+    <input type="text" name="problem" value="{{problem}}">
+    <input type="submit" name="update" value="修改">
+</form>
+<p>{{msg}}</p>
+<a href="{% url 'login' %}">返回登陆界面</a>
+<p>{{return|safe}}</p>
+</body>
+</html>

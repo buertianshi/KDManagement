@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<h1>我寄出的快递</h1>
+<p>------------------------------------------------------------</p>
+{% for i in meto %}
+<p>快递单号:{{i.id}}  收件人：{{i.receiver}}  目的地：{{i.destination}}  </p>
+<pre>快件详情：{{i.content}}</pre>
+<p>当前位置：{{i.networkName}}  当前状态：{{i.condition}}</p>
+<p>------------------------------------------------------------</p>
+{% endfor %}
+<h1>寄给我的快递</h1>
+<p>------------------------------------------------------------</p>
+{% for i in tome %}
+<p>快递单号:{{i.id}}  寄件人：{{i.username}}  目的地：{{i.destination}}  </p>
+<pre>快件详情：{{i.content}}</pre>
+<p>当前位置：{{i.networkName}}  当前状态：{{i.condition}}</p>
+<p>------------------------------------------------------------</p>
+{% endfor %}
+
+<a href="{% url 'login' %}">返回登陆界面</a><br>
+<a href="{% url 'userMain' %}">返回个人管理界面</a>
+</body>
+</html>

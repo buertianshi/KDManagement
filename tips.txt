@@ -1,0 +1,30 @@
+超管：快递员，管理员的增删查改
+
+管理员：快递员管理（增删查改）
+网点增删查改
+快递总数，问题件数增删查改
+对用户的增加件进行指派快递员处理
+处理投诉
+
+快递员：修改快件信息（单号）（指派后）
+查询快递状态（单号）
+
+用户：增加快件，包括快递单号，寄件人，收件人，发出地，目的地，状态=已接收，当前网点=发出地,快件详情，是否为问题件=FALSE
+查询快递（根据单号查询，查询自己寄出的快件，查询寄给自己的快件。）
+管理个人信息
+(username,number,sexy,age)
+投诉与建议
+
+快递表：
+快递单号 寄件人 收件人 寄出地 目的地 快件状态 快件详情 快件当前网点 是否为问题件
+id username receiver sourcePlace destination condition networkName content problem
+投诉表：
+用户 投诉内容 回复 处理状态
+username content respose condition
+网点表：
+网点名称
+networkName
+
+allcontent=[]
+allcontent[0]={content: ,respose:}
+ctl[allcontent]=allconetnt

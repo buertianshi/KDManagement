@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<form action="/login" method="post">
+    {% csrf_token %}
+    <p>用户名</p>
+    <input type="text" name="username">
+    <p>密码</p>
+    <input type="text" name="password"><br>
+    <label><input type="radio" name="identity" value="用户" checked="checked">用户</label>
+    <label><input type="radio" name="identity" value="快递员">快递员</label>
+    <label><input type="radio" name="identity" value="管理员">管理员</label>
+    <label><input type="radio" name="identity" value="超管">超管</label><br>
+    <input type="submit" name="submit" value="登陆">
+    <br>
+    <br>
+    <a href="{% url 'sign' %}">注册</a>
+</form>
+<p>{{info}}</p>
+<br>
+</body>
+</html>

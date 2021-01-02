@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<h1>我的投诉和建议</h1>
+{% for i in allContent %}
+<p>投诉内容：</p>
+<pre>{{i.content}}</pre>
+<p>投诉答复:</p>
+<pre>{{i.respose}}</pre>
+<p>是否处理：{{i.condition}}</p>
+<br>
+{% endfor %}
+<form action="/complaint" method="post">
+    {% csrf_token %}
+<h1>投诉或建议内容：</h1>
+<textarea name="content" style="width:200px;height:80px;"></textarea>
+<input type="submit" name="submit" value="提交">
+</form>
+<p>{{msg}}</p>
+<a href="{% url 'login' %}">返回登陆界面</a><br>
+<a href="{% url 'userMain' %}">返回个人管理界面</a>
+
+</body>
+</html>

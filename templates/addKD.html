@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<form action="/addKD" method="post">
+    {% csrf_token %}
+    <p>快递单号</p>
+    <input type="text" name="id">
+    <p>寄件人</p>
+    <input type="text" name="username" value="{{username}}">
+    <p>收件人</p>
+    <input type="text" name="receiver">
+    <p>寄出地</p>
+    <input type="text" name="sourcePlace">
+    <p>目的地</p>
+    <input type="text" name="destination">
+    <p>快件详情</p>
+    <input type="text" name="content">
+    <br>
+    <input type="submit" name="submit" value="新增">
+</form>
+<p>{{msg}}</p>
+<a href="{% url 'login' %}">返回登陆界面</a>
+<p>{{return|safe}}</p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快递管理系统</title>
+</head>
+<body>
+<h1>个人信息管理</h1>
+<form action="/personInfo" method="post">
+    {% csrf_token %}
+    <p>用户名</p>
+    <input type="text" value="{{oldName}}" disabled="true">
+    <p>性别</p>
+    <input type="text" name="sexy" value="{{oldSexy}}">
+    <p>年龄</p>
+    <input type="text" name="age" value="{{oldAge}}">
+    <p>联系方式</p>
+    <input type="text" name="number" value="{{oldNumber}}"><br>
+    <input type="submit" name="submit" value="修改信息"><br>
+    <a href="{% url 'login' %}">返回登陆界面</a><br>
+    <a href="{% url 'userMain' %}">返回个人管理界面</a>
+
+    <br>
+
+</form>
+<p>{{msg}}</p>
+</body>
+</html>
